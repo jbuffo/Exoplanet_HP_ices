@@ -1,0 +1,18 @@
+HP_Ice_Evolve is a MATLAB function that  simulates the thermal evolution of an ice sheet
+
+Inputs:
+T_n - a vertical temperature profile (K)
+k   - a vertical thermal conductivity profile (W/m*K)
+rho - a vertical density profile (kg/m^3)
+c   - a vertical specific heat profile (J/kg*K)
+dt  - a time step (s)
+dz  - vertical spatial resolution (m)
+T_surf - surface temperature (K)
+Base_flux - basal heat flux (W/m^2)
+
+Output:
+Vertical temperature profile after timestep dt
+
+Thus, to call the function type: Temp=HP_Ice_Evolve(T_n,k,rho,c,dt,dz,T_surf,Base_flux)
+
+'Temp' will be the new temperature profile.
