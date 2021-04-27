@@ -1,1 +1,29 @@
+HP_Ice_Evolve_v2 is a MATLAB function that simulates the physical (freezing/melting) and thermal (diffusive heat transport) evolution of 
+an ice sheet made up of various ice phases (e.g. ice 1h, HP ices).
 
+Inputs:
+T_n       - a vertical temperature profile (K)
+Phi_n     - a vertical porosity profile
+k_i       - a vertical ice thermal conductivity profile (W/m*K)
+rho_i     - a vertical ice density profile (kg/m^3)
+c_i       - a vertical ice specific heat profile (J/kg*K)
+k_w       - thermal conductivity of water (W/m*K) [e.g. 0.6]
+rho_w     - density of water (kg/m^3) [e.g. 1000]
+c_w       - specific heat of water (J/kg*K) [e.g. 4180]
+dt        - a time step (s)
+dz        - vertical spatial resolution (m)
+T_surf    - surface temperature (K)
+Base_flux - basal heat flux (W/m^2)
+Tm        - a vertical ice melting temperature profile (K)
+L         - latent heat of fusion for the ice-water phase transisiton (J/kg) [currently using one latent heat, regardless of ice type, can change in the future]
+TTol      - temperature tolerance for finite difference iterator
+PhiTol    - porosity tolerance for finite difference iterator
+
+Output:
+T_np1     - vertical temperature profile after timestep dt
+Phi_np1   - vertical porosity profile after a timestep dt
+
+Thus, to call the function type: [T_np1,Phi_np1]=HP_Ice_Evolve_v2(T_n,Phi_n,k_i,rho_i,c_i,k_w,rho_w,...
+    c_w,dt,dz,T_surf,Base_flux,Tm,L,TTol,PhiTol)
+
+'T_np1' will be the new temperature profile and 'Phi_np1' will be the new porosity profile
